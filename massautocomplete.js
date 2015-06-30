@@ -254,7 +254,7 @@ angular.module('MassAutoComplete', [])
 
             // Select an element and close the menu. Or, if a selection is
             // unavailable let the event propagate.
-            case KEYS.ENTER:
+            case KEYS.ENTER, KEYS.TAB:
               // Accept a selection only if results exist, the menu is
               // displayed and the results are valid (no current request
               // for new suggestions is active).
@@ -269,8 +269,8 @@ angular.module('MassAutoComplete', [])
                 // elements because this event is not of their concern. We cannot
                 // prevent events from firing when the event was registered on
                 // the input itself.
-                e.stopPropagation();
-                e.preventDefault();
+                /*e.stopPropagation();
+                e.preventDefault();*/
               }
 
               $scope.show_autocomplete = false;
@@ -279,11 +279,11 @@ angular.module('MassAutoComplete', [])
 
             // Navigate the menu when it's open. When it's not open fall back
             // to default behavior.
-            case KEYS.TAB:
+            /*case KEYS.TAB:
               if (!$scope.show_autocomplete)
                 break;
 
-              e.preventDefault();
+              e.preventDefault();*/
               /* falls through */
 
             // Open the menu when results exists but are not displayed. Or,
