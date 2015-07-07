@@ -145,6 +145,8 @@ angular.module('MassAutoComplete', [])
                 $scope.show_autocomplete = true;
                 if (current_options.auto_select_first)
                     set_selection(1);
+                else
+                	show_default_selection(1);
               } else {
                 $scope.results = [];
               }
@@ -205,6 +207,10 @@ angular.module('MassAutoComplete', [])
         return selected;
       }
 
+      function show_default_selection(i) {
+        $scope.selected_index = i;
+      }
+      
       // Apply and accept the current selection made from the menu.
       // When selecting from the menu directly (using click or touch) the
       // selection is directly applied.
